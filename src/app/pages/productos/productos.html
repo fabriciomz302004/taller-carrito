@@ -1,66 +1,29 @@
-<div class="productos-container">
-  <h1>Nuestros Videojuegos</h1>
-  
-  <!-- Filtros -->
-  <div class="filtros">
-    <div class="busqueda">
-      <input 
-        type="text" 
-        placeholder="Buscar productos..." 
-        [(ngModel)]="terminoBusqueda"
-        (input)="onBuscarChange(terminoBusqueda)"
-      >
-    </div>
-    
-    <div class="categorias">
-      <label for="categoria">Filtrar por categoría:</label>
-      <select 
-        id="categoria" 
-        [(ngModel)]="categoriaSeleccionada"
-        (change)="onCategoriaChange(categoriaSeleccionada)"
-      >
-        <option *ngFor="let categoria of categorias" [value]="categoria">
-          {{ categoria === 'todos' ? 'Todos los productos' : categoria }}
-        </option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Mensaje de carga -->
-  <div *ngIf="cargando" class="cargando">
-    <p>Cargando productos...</p>
-  </div>
-
-  <!-- Lista de productos -->
-  <div *ngIf="!cargando" class="productos-grid">
-    <div *ngFor="let producto of productosFiltrados" class="producto-card">
-      <div class="producto-imagen">
-        <img [src]="producto.imagen" [alt]="producto.titulo" onerror="this.src='/assets/placeholder-game.jpg'">
-      </div>
-      
-      <div class="producto-info">
-        <h3>{{ producto.titulo }}</h3>
-        <p class="descripcion">{{ producto.descripcion }}</p>
-        
-        <div class="detalles">
-          <span class="precio">{{ producto.precio | currency }}</span>
-          <span class="plataforma" *ngIf="producto.plataforma">
-            {{ producto.plataforma }}
-          </span>
-          <span class="genero" *ngIf="producto.genero">
-            {{ producto.genero }}
-          </span>
+<div class="container py-4">
+  <h1 class="text-center mb-4">Nuestros Videojuegos</h1>
+  <div class="row justify-content-center">
+    <div *ngFor="let juego of videojuegos" class="col-md-4 mb-4 d-flex">
+      <div class="card h-100 shadow-sm w-100">
+        <img [src]="juego.imagen" class="card-img-top" width="100" [alt]="juego.titulo" style="object-fit:cover; height:200px;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-center">{{juego.titulo}}</h5>
+          <p class="card-text">{{juego.descripcion}}</p>
+          <p><strong>Plataforma:</strong> {{juego.plataforma.join(', ')}}</p>
+          <p><strong>Género:</strong> {{juego.genero.join(', ')}}</p>
+          <p><strong>Precio:</strong> {{juego.precio | currency}}</p>
+          <div class="d-flex align-items-center justify-content-center mb-2">
+            <button class="btn btn-outline-secondary btn-sm me-2" (click)="juego.cantidad = (juego.cantidad > 1 ? juego.cantidad - 1 : 1)">
+              -
+            </button>
+            <span class="mx-2">{{juego.cantidad || 1}}</span>
+            <button class="btn btn-outline-secondary btn-sm ms-2" (click)="juego.cantidad = (juego.cantidad ? juego.cantidad + 1 : 2)">
+              +
+            </button>
+          </div>
+          <button class="btn btn-success mt-auto" (click)="agregarAlCarrito(juego)">
+            Agregar al carrito
+          </button>
         </div>
-        
-        <button class="btn-agregar" (click)="agregarAlCarrito(producto)">
-          Agregar al carrito
-        </button>
       </div>
     </div>
-  </div>
-
-  <!-- Mensaje si no hay productos -->
-  <div *ngIf="!cargando && productosFiltrados.length === 0" class="sin-productos">
-    <p>No se encontraron productos que coincidan con tu búsqueda.</p>
   </div>
 </div>

@@ -303,6 +303,43 @@
             "lanzamiento": "18 de febrero de 2022",
             "descripcion": "Horizon Forbidden West es un videojuego de acción y aventura desarrollado por Guerrilla Games para PlayStation 4 y PlayStation 5. Es la secuela de Horizon Zero Dawn.",
             "imagen": "https://cdn.mobygames.com/covers/1234567-horizon-forbidden-west-playstation-front-cover.jpg"
+        },
+        {
+            "titulo": "God of War Ragnarök",
+            "plataforma": [
+                "PlayStation 4",
+                "PlayStation 5"
+            ],
+            "genero": [
+                "Acción",
+                "Aventura"
+            ],
+            "desarrollador": "Santa Monica Studio",
+            "precio": 9,
+            "lanzamiento": "9 de noviembre de 2022",
+            "descripcion": "God of War Ragnarök es un videojuego de acción y aventura desarrollado por Santa Monica Studio y publicado por Sony Interactive Entertainment. Es la secuela de God of War (2018).",
+            "imagen": "https://cdn.mobygames.com/covers/1234568-god-of-war-ragnarok-playstation-front-cover.jpg"
+        },
+        {
+            "titulo": "Elden Ring",
+            "plataforma": [
+                "PlayStation 4",
+                "PlayStation 5",
+                "Xbox One",
+                "Xbox Series X/S",
+                "PC"
+            ],
+            "genero": [
+                "RPG",
+                "Acción",
+                "Aventura",
+                "Mundo abierto"
+            ],
+            "desarrollador": "FromSoftware",
+            "precio": 10,
+            "lanzamiento": "25 de febrero de 2022",
+            "descripcion": "Elden Ring es un videojuego de rol de acción desarrollado por FromSoftware y publicado por Bandai Namco Entertainment. El juego fue dirigido por Hidetaka Miyazaki en colaboración con George R. R. Martin.",
+            "imagen": "https://cdn.mobygames.com/covers/1234569-elden-ring-playstation-front-cover.jpg"
         }
     ]
-}   
+}

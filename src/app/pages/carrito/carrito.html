@@ -1,60 +1,59 @@
-<div class="carrito-container">
-  <h1>Tu Carrito de Compras</h1>
-  
-  <div class="carrito-vacio" *ngIf="true"> <!-- Cambiar a *ngIf="items.length === 0" después -->
-    <p>Tu carrito está vacío</p>
-    <a routerLink="/productos" class="btn-seguir-comprando">Seguir comprando</a>
+<div class="container py-4">
+  <h1 class="text-center mb-4">Tu Carrito de Compras</h1>
+
+  <div *ngIf="carrito.length === 0" class="alert alert-info text-center">
+    El carrito está vacío.
+    <br>
+    <a routerLink="/productos" class="btn btn-outline-success mt-2">Seguir comprando</a>
   </div>
-  
-  <div class="carrito-con-productos" *ngIf="false"> <!-- Cambiar a *ngIf="items.length > 0" después -->
-    <div class="items-carrito">
-      <div class="item-carrito">
-        <div class="item-imagen">
-          <img src="/assets/placeholder-game.jpg" alt="Videojuego">
+
+  <div *ngIf="carrito.length > 0">
+    <div class="card mb-4 mx-auto" style="max-width: 700px;">
+      <div *ngFor="let producto of carrito" class="card-body d-flex align-items-center justify-content-between border-bottom">
+        <div class="d-flex align-items-center">
+          <img [src]="producto.imagen" alt="{{producto.titulo}}" width="80" class="rounded me-3" style="object-fit:cover;">
+          <div>
+            <h5 class="mb-1">{{producto.titulo}}</h5>
+            <div class="text-muted small">{{producto.plataforma.join(', ')}}</div>
+            <div class="text-muted small">{{producto.genero.join(', ')}}</div>
+          </div>
         </div>
-        
-        <div class="item-info">
-          <h3>Título del Videojuego</h3>
-          <p class="item-plataforma">PS5</p>
-          <p class="item-genero">Acción</p>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-secondary btn-sm me-2" (click)="cambiarCantidad(producto, -1)">-</button>
+          <span class="mx-2">{{producto.cantidad}}</span>
+          <button class="btn btn-outline-secondary btn-sm ms-2" (click)="cambiarCantidad(producto, 1)">+</button>
         </div>
-        
-        <div class="item-cantidad">
-          <button class="btn-cantidad">-</button>
-          <span class="cantidad">1</span>
-          <button class="btn-cantidad">+</button>
+        <div class="fw-bold text-success me-3">
+          {{ producto.precio | currency }}
         </div>
-        
-        <div class="item-precio">
-          $59.99
-        </div>
-        
-        <button class="btn-eliminar">
+        <button class="btn btn-outline-danger btn-sm" (click)="eliminarDelCarrito(producto)">
           🗑️
         </button>
       </div>
     </div>
-    
-    <div class="resumen-compra">
-      <h2>Resumen de compra</h2>
-      
-      <div class="resumen-linea">
-        <span>Subtotal:</span>
-        <span>$59.99</span>
+
+    <div class="card mx-auto" style="max-width: 700px;">
+      <div class="card-body">
+        <h2 class="h4 mb-3 text-center">Resumen de compra</h2>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Subtotal:</span>
+          <span>{{ calcularSubtotal() | currency }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Envío:</span>
+          <span>Gratis</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold mb-4">
+          <span>Total:</span>
+          <span>{{ calcularSubtotal() | currency }}</span>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-2">
+          <button class="btn btn-success flex-fill" (click)="procederAlPago()">Proceder al pago</button>
+          <a routerLink="/productos" class="btn btn-outline-success flex-fill">Seguir comprando</a>
+        </div>
       </div>
-      
-      <div class="resumen-linea">
-        <span>Envío:</span>
-        <span>Gratis</span>
-      </div>
-      
-      <div class="resumen-linea total">
-        <span>Total:</span>
-        <span>$59.99</span>
-      </div>
-      
-      <button class="btn-comprar">Proceder al pago</button>
-      <a routerLink="/productos" class="btn-seguir-comprando">Seguir comprando</a>
     </div>
   </div>
 </div>
+
