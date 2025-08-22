@@ -1,0 +1,60 @@
+<div class="carrito-container">
+  <h1>Tu Carrito de Compras</h1>
+  
+  <div class="carrito-vacio" *ngIf="true"> <!-- Cambiar a *ngIf="items.length === 0" después -->
+    <p>Tu carrito está vacío</p>
+    <a routerLink="/productos" class="btn-seguir-comprando">Seguir comprando</a>
+  </div>
+  
+  <div class="carrito-con-productos" *ngIf="false"> <!-- Cambiar a *ngIf="items.length > 0" después -->
+    <div class="items-carrito">
+      <div class="item-carrito">
+        <div class="item-imagen">
+          <img src="/assets/placeholder-game.jpg" alt="Videojuego">
+        </div>
+        
+        <div class="item-info">
+          <h3>Título del Videojuego</h3>
+          <p class="item-plataforma">PS5</p>
+          <p class="item-genero">Acción</p>
+        </div>
+        
+        <div class="item-cantidad">
+          <button class="btn-cantidad">-</button>
+          <span class="cantidad">1</span>
+          <button class="btn-cantidad">+</button>
+        </div>
+        
+        <div class="item-precio">
+          $59.99
+        </div>
+        
+        <button class="btn-eliminar">
+          🗑️
+        </button>
+      </div>
+    </div>
+    
+    <div class="resumen-compra">
+      <h2>Resumen de compra</h2>
+      
+      <div class="resumen-linea">
+        <span>Subtotal:</span>
+        <span>$59.99</span>
+      </div>
+      
+      <div class="resumen-linea">
+        <span>Envío:</span>
+        <span>Gratis</span>
+      </div>
+      
+      <div class="resumen-linea total">
+        <span>Total:</span>
+        <span>$59.99</span>
+      </div>
+      
+      <button class="btn-comprar">Proceder al pago</button>
+      <a routerLink="/productos" class="btn-seguir-comprando">Seguir comprando</a>
+    </div>
+  </div>
+</div>
