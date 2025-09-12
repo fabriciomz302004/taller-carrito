@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "0940562663",
+      "nombre": "fabricio",
+      "edad": "23",
+      "password": "1234",
+      "confirmarPassword": "1234"
+    },
+    {
+      "id": "095784733",
+      "nombre": "martin",
+      "email": "fabricio7moreira30@gmail.com",
+      "edad": "21",
+      "password": "12345",
+      "confirmarPassword": "12345"
+    },
+    {
+      "email": "fabricio756moreira30@gmail.com",
+      "password": "$2a$10$qpUr3941ciTunXXng1fmKuQafMuGgVV1TihGJHlu3LRdiyrh01kFG",
+      "nombre": "fabricio",
+      "edad": 56,
+      "id": "FBJql8f"
+    },
+    {
+      "email": "pepe@gmail.com",
+      "password": "$2a$10$IEISzIbYeadH6zmXF2S.BeRSMXS.DzKxGIAam0rT9/ghPgG6v9pVe",
+      "nombre": "pepe",
+      "edad": 12,
+      "id": "W9S08sH"
+    },
+    {
+      "email": "nena@gmail.com",
+      "password": "$2a$10$1MPgAZUluF.xQCXSZhgo7uPO7Mb1ad.St3J7IUFL0HtRm/wMJjKP6",
+      "nombre": "nena",
+      "edad": 23,
+      "id": "LfXmHsv"
+    }
+  ]
+}
