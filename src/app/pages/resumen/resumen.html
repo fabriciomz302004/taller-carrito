@@ -1,3 +1,4 @@
+<button (click)="logout()">cerrar sesion</button>
 <div class="resumen-container">
   <h1>Resumen de tu Compra</h1>
   
@@ -5,47 +6,39 @@
     <div class="info-usuario">
       <h2>Información del comprador</h2>
       <div class="info-detalle">
-        <p><strong>Nombre:</strong> Juan Pérez</p>
-        <p><strong>Email:</strong> juan.perez@email.com</p>
-        <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad</p>
+        <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+        <p><strong>Email:</strong> {{ usuario.email }}</p>
+        <p><strong>Edad:</strong> {{ usuario.edad }}</p>
       </div>
     </div>
     
     <div class="info-pedido">
       <h2>Detalles del pedido</h2>
       <div class="items-resumen">
-        <div class="item-resumen">
-          <span class="item-nombre">Título del Videojuego × 1</span>
-          <span class="item-precio">$59.99</span>
-        </div>
-        
-        <div class="item-resumen">
-          <span class="item-nombre">Otro Videojuego × 1</span>
-          <span class="item-precio">$49.99</span>
+        <div class="item-resumen" *ngFor="let item of carrito">
+          <span class="item-nombre">{{ item.titulo }} × {{ item.cantidad }}</span>
+          <span class="item-precio">${{ item.precio * item.cantidad }}</span>
         </div>
       </div>
       
       <div class="total-resumen">
         <div class="resumen-linea">
           <span>Subtotal:</span>
-          <span>$109.98</span>
+          <span>${{ total }}</span>
         </div>
-        
         <div class="resumen-linea">
           <span>Envío:</span>
           <span>Gratis</span>
         </div>
-        
         <div class="resumen-linea total">
           <span>Total:</span>
-          <span>$109.98</span>
+          <span>${{ total }}</span>
         </div>
       </div>
     </div>
   </div>
   
   <div class="acciones">
-    <button class="btn-confirmar">Confirmar compra</button>
     <a routerLink="/carrito" class="btn-volver">Volver al carrito</a>
   </div>
 </div>

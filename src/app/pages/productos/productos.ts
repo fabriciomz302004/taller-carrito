@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef, inject } from '@angular/core';
 import datos from '../../../../assets/video_juegos.json';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { LoginA } from '../../services/login-a';
+import { Router } from '@angular/router';
+// import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-productos',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './productos.html',
   styleUrl: './productos.css'
 })
 export class Productos {
   videojuegos: any[] = [];
-
-  constructor() {
+  mensaje: string = '';
+  constructor(private cd: ChangeDetectorRef) {
     // Inicializa videojuegos y cantidad
     this.videojuegos = datos.videojuegos.map(j => ({ ...j, cantidad: 1 }));
   }
@@ -27,5 +30,24 @@ export class Productos {
       carrito.push({ ...juego });
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    // Mostrar mensaje breve
+    this.mostrarMensaje('¡Videojuego agregado!');
+  }
+
+  mostrarMensaje(texto: string) {
+    this.mensaje = texto;
+    this.cd.detectChanges();
+    setTimeout(() => {
+      this.mensaje = '';
+      this.cd.detectChanges();
+    }, 2000);
+  }
+  servicio = inject(LoginA);
+  ruta = inject(Router);
+
+
+  logout(){
+    this.servicio.logout();
+    this.ruta.navigate(['/login']);
   }
 }

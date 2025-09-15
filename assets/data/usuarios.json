@@ -35,6 +35,41 @@
       "nombre": "nena",
       "edad": 23,
       "id": "LfXmHsv"
+    },
+    {
+      "email": "orlando2@gmail.com",
+      "password": "$2a$10$GlmY8UKn9waakaLT7TFq0OFfycnczCV.Wp0U6cX.BXL1dVxtO3GUO",
+      "nombre": "orlando",
+      "edad": 23,
+      "id": "P4jAzB6"
+    },
+    {
+      "email": "erica@gmail.com",
+      "password": "$2a$10$TylcLAsuF5mKlQQJSgCZueY/NGjHWlJqsu7ywUDjIa4NU28yFglMW",
+      "nombre": "erica",
+      "edad": 23,
+      "id": "c8KQhW4"
+    },
+    {
+      "email": "alan@gmail.com",
+      "password": "$2a$10$UhwuNo.37v6c2gJEXnWbE.FCa1RxTx0m/6nzE6HpNS4TOW9gMZnOO",
+      "nombre": "alan",
+      "edad": 23,
+      "id": "5dpPHjH"
+    },
+    {
+      "email": "vela@gmail.com",
+      "password": "$2a$10$hO0jMjoJtC6j3f9h.zcPSOrUvpUOrbykamM0e2nOu/NeEB6t13.MO",
+      "nombre": "vela",
+      "edad": 24,
+      "id": "6zREbel"
+    },
+    {
+      "email": "mere@gmail.com",
+      "password": "$2a$10$LVh1fA8MOgTWRsy4pbPUBeqQl2YQb26RSKX0kwtPH1zyoD/hN6w8a",
+      "nombre": "mireya",
+      "edad": 24,
+      "id": "3EqodAB"
     }
   ]
 }

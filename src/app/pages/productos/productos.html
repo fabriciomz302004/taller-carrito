@@ -1,4 +1,8 @@
+<button (click)="logout()">cerrar sesion</button>
 <div class="container py-4">
+  <div *ngIf="mensaje" class="alert alert-success text-center" style="position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:999;max-width:300px;">
+    {{ mensaje }}
+  </div>
   <h1 class="text-center mb-4">Nuestros Videojuegos</h1>
   <div class="row justify-content-center">
     <div *ngFor="let juego of videojuegos" class="col-md-4 mb-4 d-flex">

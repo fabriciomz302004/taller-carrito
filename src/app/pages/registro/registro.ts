@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Usuarios } from '../../services/usuarios';
+import { Autenticacion } from '../../services/autenticacion';
+import { Router } from '@angular/router';
 
 
 
@@ -13,25 +15,24 @@ import { Usuarios } from '../../services/usuarios';
   styleUrl: './registro.css'
 })
 export class Registro {
-  servicio = inject(Usuarios);
+   servicio = inject(Autenticacion);
+  ruta = inject(Router);
 
-  id: string = "";
-  nombre: string = "";
-  email: string = ""; // <-- nueva propiedad
-  edad: number = 0;
-  password: string = ""; // <-- agrega esta propiedad
-  confirmarPassword: string = ""; // <-- agrega esta propiedad
+  email= ""
+  password=""
+  nombre=""
+  edad=""
 
-  guardar(usuario :any) {
-  
-    console.log(usuario.value);
-    this.servicio.postUser(usuario.value).subscribe();
-    this.id = "";
-    this.nombre = "";
-    this.email = "";
-    this.edad = 0;
-    this.password = "";
-    this.confirmarPassword = "";
+  registro(datos: any) {
+    this.servicio.registroUser(datos.value).subscribe({
+      next: () => {
+        this.ruta.navigate(['/login']);
+      },
+    });
   }
+  loginruta(){
+    this.ruta.navigate(['/login']);
+  }
+
 }
 

@@ -5,13 +5,16 @@ import { Registro } from './pages/registro/registro';
 import { Resumen } from './pages/resumen/resumen';
 
 import { Productos } from './pages/productos/productos';
+import { productogGuard } from './guards/productog-guard';
+import { Login } from './pages/login/login';
 
 export const routes: Routes = [
 
-    { path: 'carrito', component: Carrito },
-    { path: 'productos', component: Productos },
+    { path: 'carrito', component: Carrito , canActivate: [productogGuard] },
+    { path: 'productos', component: Productos , canActivate: [productogGuard] },
     { path: 'registro', component: Registro },
-    { path: 'resumen', component: Resumen },
+    { path: 'login', component: Login },
+    { path: 'resumen', component: Resumen , canActivate: [productogGuard]},
     
 
 
