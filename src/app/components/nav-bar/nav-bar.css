@@ -1,0 +1,78 @@
+
+.navbar {
+  background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  border-bottom: 3px solid #e60039;
+}
+
+
+.navbar-brand {
+  color: #e60039 !important;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 5px #e60039, 0 0 10px #ff1a55, 0 0 20px #ff1a55;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #e60039, 0 0 20px #ff1a55, 0 0 30px #ff1a55;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  padding: 8px 12px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+
+.nav-link:hover {
+  color: #e60039 !important;
+  border: 2px solid #e60039;
+  box-shadow: 0 0 10px #e60039, 0 0 20px #ff1a55, 0 0 30px #ff1a55;
+  transform: scale(1.05);
+}
+
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #e60039;
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+button {
+  background: linear-gradient(135deg, #e60039, #ff004c, #ff66a3);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 0 8px #e60039, 0 0 15px #ff004c, 0 0 20px #ff66a3;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff004c, #e60039, #ff66a3);
+  transform: scale(1.1) rotate(-1deg);
+  box-shadow: 0 0 15px #ff004c, 0 0 25px #e60039, 0 0 35px #ff66a3;
+}

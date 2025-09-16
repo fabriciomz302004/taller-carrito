@@ -3,7 +3,7 @@ import datos from '../../../../assets/video_juegos.json';
 import { CommonModule } from '@angular/common';
 import { LoginA } from '../../services/login-a';
 import { Router } from '@angular/router';
-// import { RouterLink } from '@angular/router';
+
 
 
 @Component({
@@ -16,13 +16,13 @@ export class Productos {
   videojuegos: any[] = [];
   mensaje: string = '';
   constructor(private cd: ChangeDetectorRef) {
-    // Inicializa videojuegos y cantidad
+   
     this.videojuegos = datos.videojuegos.map(j => ({ ...j, cantidad: 1 }));
   }
 
   agregarAlCarrito(juego: any) {
     let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-    // Busca si el juego ya está en el carrito
+    
     const idx = carrito.findIndex((item: any) => item.titulo === juego.titulo);
     if (idx > -1) {
       carrito[idx].cantidad += juego.cantidad;
@@ -30,7 +30,7 @@ export class Productos {
       carrito.push({ ...juego });
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    // Mostrar mensaje breve
+   
     this.mostrarMensaje('¡Videojuego agregado!');
   }
 

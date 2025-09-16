@@ -14,7 +14,7 @@ export class Carrito {
 
   ngOnInit() {
     const items = JSON.parse(localStorage.getItem('carrito') || '[]');
-    // Asegura que cada producto tenga la propiedad cantidad
+
     this.carrito = items.map((p: any) => ({ ...p, cantidad: p.cantidad || 1 }));
   }
 
@@ -39,7 +39,7 @@ export class Carrito {
   }
 
   procederAlPago() {
-    // Guardar la compra antes de vaciar el carrito
+   
     localStorage.setItem('compra', JSON.stringify(this.carrito));
     alert('¡Gracias por tu compra!');
     this.carrito = [];

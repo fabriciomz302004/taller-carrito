@@ -25,10 +25,6 @@ export class Usuarios {
   deleteUser(id : any): Observable<any>{
     return this.http.delete(this.API_USER+"/"+id)
   }
-///////////////////////////////////////////
-  ///////////////////////////////
-  ////// FALTA ESTO  necesario para editar///////////////
-
 
   //EDITAR - PUT
   updateUser(usuario : any): Observable<any>{

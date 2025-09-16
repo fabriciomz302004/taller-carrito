@@ -70,6 +70,13 @@
       "nombre": "mireya",
       "edad": 24,
       "id": "3EqodAB"
+    },
+    {
+      "email": "arevalomartin967@gmail.com",
+      "password": "$2a$10$7bPO1l6pb5gvWTOQkhcQ7ONvZpptjmyZjQk62fv7lmN9IKhSfu0.O",
+      "nombre": "Martin Arevalo",
+      "edad": 25,
+      "id": "QQS--F9"
     }
   ]
 }

@@ -22,7 +22,7 @@ export class Login {
   login( datos: NgForm) {
     this.servicio.loginUser(datos.value).subscribe(p => {
       if (p.accessToken) {
-        // Guardar datos del usuario logueado en localStorage
+       
         localStorage.setItem('usuario', JSON.stringify(p.user));
         this.servicio2.login();
         this.ruta.navigate(['/productos']);
