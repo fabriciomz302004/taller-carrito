@@ -22,7 +22,6 @@ export class Productos {
 
   agregarAlCarrito(juego: any) {
     let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-    
     const idx = carrito.findIndex((item: any) => item.titulo === juego.titulo);
     if (idx > -1) {
       carrito[idx].cantidad += juego.cantidad;
@@ -30,8 +29,12 @@ export class Productos {
       carrito.push({ ...juego });
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
-   
     this.mostrarMensaje('¡Videojuego agregado!');
+  }
+
+  cambiarCantidad(juego: any, cambio: number) {
+    juego.cantidad = Math.max(1, (juego.cantidad || 1) + cambio);
+    this.cd.detectChanges();
   }
 
   mostrarMensaje(texto: string) {

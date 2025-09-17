@@ -15,13 +15,9 @@
           <p><strong>Género:</strong> {{juego.genero.join(', ')}}</p>
           <p><strong>Precio:</strong> {{juego.precio | currency}}</p>
           <div class="d-flex align-items-center justify-content-center mb-2">
-            <button class="btn btn-outline-secondary btn-sm me-2" (click)="juego.cantidad = (juego.cantidad > 1 ? juego.cantidad - 1 : 1)">
-              -
-            </button>
-            <span class="mx-2">{{juego.cantidad || 1}}</span>
-            <button class="btn btn-outline-secondary btn-sm ms-2" (click)="juego.cantidad = (juego.cantidad ? juego.cantidad + 1 : 2)">
-              +
-            </button>
+            <button class="btn btn-cantidad me-2" (click)="cambiarCantidad(juego, -1)">−</button>
+            <span class="mx-2 cantidad-num">{{juego.cantidad}}</span>
+            <button class="btn btn-cantidad ms-2" (click)="cambiarCantidad(juego, 1)">+</button>
           </div>
           <button class="btn btn-success mt-auto" (click)="agregarAlCarrito(juego)">
             Agregar al carrito
