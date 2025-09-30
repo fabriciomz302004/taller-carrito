@@ -77,6 +77,48 @@
       "nombre": "Martin Arevalo",
       "edad": 25,
       "id": "QQS--F9"
+    },
+    {
+      "email": "ali@gmail.com",
+      "password": "$2a$10$58Vlf6viM9f/Aa0Mt5wdqeiEfZYfzjA1MhVp5yJ11JbFLoIeBdQQ6",
+      "nombre": "ali",
+      "edad": 23,
+      "id": "FVObDy6"
+    },
+    {
+      "email": "oliver@gmail.com",
+      "password": "$2a$10$PwpO8rEPvIOZ.uqFpiERoeU3QA1zDCXKU0WsxiYx0b7WEPlYWhyqa",
+      "nombre": "oliver",
+      "edad": 23,
+      "id": "93_jR52"
+    },
+    {
+      "email": "osorio@gmail.com",
+      "password": "$2a$10$EnqhKoJj0Hemt.LHgZtFpe57pSb3MBnYNuM5uAaa8eNIYaFsZK5u2",
+      "nombre": "osorio",
+      "edad": 12,
+      "id": "a_6XCaS"
+    },
+    {
+      "email": "avv@gmail.com",
+      "password": "$2a$10$ZNxpErZ/91YRJAxYWde.CucMvDisxGtlusRldfzZLnAKtf4dXHova",
+      "nombre": "avv",
+      "edad": 23,
+      "id": "51sz4vI"
+    },
+    {
+      "email": "maria@gmail.com",
+      "password": "$2a$10$hzCFg64IqQlqaqDY3C560.7M4aRU2P3Na4b2aLLKd/nsAT757yO9a",
+      "nombre": "maria",
+      "edad": 23,
+      "id": "8gau_yv"
+    },
+    {
+      "email": "alo@gmail.com",
+      "password": "$2a$10$P8Aw/f9NTgmNf3S91YMrTeorru/iDDdAYb04.mmDfJ.TpVp.cxiZS",
+      "nombre": "alo",
+      "edad": 21,
+      "id": "5nXSixy"
     }
   ]
 }

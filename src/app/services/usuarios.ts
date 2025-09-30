@@ -9,7 +9,8 @@ export class Usuarios {
 
   constructor( private http: HttpClient){}
 
-  private API_USER = "http://localhost:3000/usuario"
+  //private API_USER = "http://localhost:3000/usuario"
+  private API_USER = "http://localhost:9090/usuario"
 
   //GUARDAR - POST
   postUser(usuario : JSON):Observable<any> {

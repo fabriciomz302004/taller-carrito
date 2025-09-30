@@ -7,12 +7,12 @@
   <div class="row justify-content-center">
     <div *ngFor="let juego of videojuegos" class="col-md-4 mb-4 d-flex">
       <div class="card h-100 shadow-sm w-100">
-        <img [src]="juego.imagen" class="card-img-top" width="100" [alt]="juego.titulo" style="object-fit:cover; height:200px;">
+        <img [src]="juego.imagen" class="card-img-top" width="100" [alt]="juego.nombre" style="object-fit:cover; height:200px;">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title text-center">{{juego.titulo}}</h5>
+          <h5 class="card-title text-center">{{juego.nombre}}</h5>
           <p class="card-text">{{juego.descripcion}}</p>
-          <p><strong>Plataforma:</strong> {{juego.plataforma.join(', ')}}</p>
-          <p><strong>Género:</strong> {{juego.genero.join(', ')}}</p>
+          <p><strong>Plataforma:</strong> {{juego.plataforma}}</p>
+          <p><strong>Género:</strong> {{juego.genero}}</p>
           <p><strong>Precio:</strong> {{juego.precio | currency}}</p>
           <div class="d-flex align-items-center justify-content-center mb-2">
             <button class="btn btn-cantidad me-2" (click)="cambiarCantidad(juego, -1)">−</button>

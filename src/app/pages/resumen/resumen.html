@@ -16,7 +16,12 @@
       <h2>Detalles del pedido</h2>
       <div class="items-resumen">
         <div class="item-resumen" *ngFor="let item of carrito">
-          <span class="item-nombre">{{ item.titulo }} × {{ item.cantidad }}</span>
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="item-imagen" style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px; border-radius: 8px;">
+          <div class="item-detalle">
+            <span class="item-nombre"><strong>{{ item.nombre }}</strong> ({{ item.plataforma }})</span><br>
+            <span class="item-genero">{{ item.genero }}</span><br>
+            <span class="item-cantidad">Cantidad: {{ item.cantidad }}</span>
+          </div>
           <span class="item-precio">${{ item.precio * item.cantidad }}</span>
         </div>
       </div>

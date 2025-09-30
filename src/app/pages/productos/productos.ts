@@ -1,6 +1,6 @@
-import { Component, ChangeDetectorRef, inject } from '@angular/core';
-import datos from '../../../../assets/video_juegos.json';
+import { Component, ChangeDetectorRef, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Videojuegosservices } from '../../services/videojuegosservices';
 import { LoginA } from '../../services/login-a';
 import { Router } from '@angular/router';
 
@@ -8,21 +8,29 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './productos.html',
   styleUrl: './productos.css'
 })
-export class Productos {
+export class Productos implements OnInit {
   videojuegos: any[] = [];
   mensaje: string = '';
-  constructor(private cd: ChangeDetectorRef) {
-   
-    this.videojuegos = datos.videojuegos.map(j => ({ ...j, cantidad: 1 }));
+  servicio = inject(LoginA);
+  ruta = inject(Router);
+
+  constructor(private cd: ChangeDetectorRef, private videojuegosService: Videojuegosservices) {}
+
+  ngOnInit() {
+    this.videojuegosService.getVideojuegos().subscribe((data: any[]) => {
+      this.videojuegos = data.map(j => ({ ...j, cantidad: 1 }));
+      this.cd.detectChanges();
+    });
   }
 
   agregarAlCarrito(juego: any) {
     let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-    const idx = carrito.findIndex((item: any) => item.titulo === juego.titulo);
+    const idx = carrito.findIndex((item: any) => item.nombre === juego.nombre);
     if (idx > -1) {
       carrito[idx].cantidad += juego.cantidad;
     } else {
@@ -45,9 +53,6 @@ export class Productos {
       this.cd.detectChanges();
     }, 2000);
   }
-  servicio = inject(LoginA);
-  ruta = inject(Router);
-
 
   logout(){
     this.servicio.logout();

@@ -14,8 +14,17 @@ export class Carrito {
 
   ngOnInit() {
     const items = JSON.parse(localStorage.getItem('carrito') || '[]');
-
-    this.carrito = items.map((p: any) => ({ ...p, cantidad: p.cantidad || 1 }));
+    // Adaptar los campos para los juegos traídos de MySQL
+    this.carrito = items.map((p: any) => ({
+      ...p,
+      cantidad: p.cantidad || 1,
+      nombre: p.nombre || p.titulo || '',
+      plataforma: typeof p.plataforma === 'string' ? p.plataforma : Array.isArray(p.plataforma) ? p.plataforma.join(', ') : '',
+      genero: typeof p.genero === 'string' ? p.genero : Array.isArray(p.genero) ? p.genero.join(', ') : '',
+      imagen: p.imagen || '',
+      precio: p.precio || 0,
+      descripcion: p.descripcion || ''
+    }));
   }
 
   cambiarCantidad(producto: any, cambio: number) {
@@ -39,7 +48,6 @@ export class Carrito {
   }
 
   procederAlPago() {
-   
     localStorage.setItem('compra', JSON.stringify(this.carrito));
     alert('¡Gracias por tu compra!');
     this.carrito = [];

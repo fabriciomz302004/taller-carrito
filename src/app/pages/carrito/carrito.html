@@ -12,11 +12,11 @@
     <div class="card mb-4 mx-auto" style="max-width: 700px;">
       <div *ngFor="let producto of carrito" class="card-body d-flex align-items-center justify-content-between border-bottom">
         <div class="d-flex align-items-center">
-          <img [src]="producto.imagen" alt="{{producto.titulo}}" width="80" class="rounded me-3" style="object-fit:cover;">
+          <img [src]="producto.imagen" alt="{{producto.nombre}}" width="80" class="rounded me-3" style="object-fit:cover;">
           <div>
-            <h5 class="mb-1">{{producto.titulo}}</h5>
-            <div class="text-muted small">{{producto.plataforma.join(', ')}}</div>
-            <div class="text-muted small">{{producto.genero.join(', ')}}</div>
+            <h5 class="mb-1">{{producto.nombre}}</h5>
+            <div class="text-muted small">{{producto.plataforma}}</div>
+            <div class="text-muted small">{{producto.genero}}</div>
           </div>
         </div>
         <div class="d-flex align-items-center">

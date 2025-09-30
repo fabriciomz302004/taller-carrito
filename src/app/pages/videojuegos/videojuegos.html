@@ -1,0 +1,59 @@
+
+<div class="container">
+    <form (ngSubmit)="agregarVideojuego(formulario)" #formulario="ngForm">
+        <div class="mb-3 mt-3">
+            <label for="nombre" class="form-label">Nombre del videojuego:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="videojuego.nombre" placeholder="Ej: The Witcher 3" required>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="plataforma" class="form-label">Plataforma:</label>
+            <input type="text" class="form-control" id="plataforma" name="plataforma" [(ngModel)]="videojuego.plataforma" placeholder="Ej: PS4, Xbox, PC" required>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="genero" class="form-label">Género:</label>
+            <input type="text" class="form-control" id="genero" name="genero" [(ngModel)]="videojuego.genero" placeholder="Ej: RPG, Acción" required>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="precio" class="form-label">Precio:</label>
+            <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="videojuego.precio" placeholder="Ej: 59.99" required>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="imagen" class="form-label">URL de la imagen:</label>
+            <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="videojuego.imagen" placeholder="URL de la portada" required>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="descripcion" class="form-label">Descripción:</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="videojuego.descripcion" placeholder="Breve descripción del juego" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Agregar videojuego</button>
+    </form>
+
+    <hr>
+    <h3>Lista de videojuegos</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Plataforma</th>
+                <th>Género</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vj of videojuegos">
+                <td>{{ vj.nombre }}</td>
+                <td>{{ vj.plataforma }}</td>
+                <td>{{ vj.genero }}</td>
+                <td>{{ vj.precio }}</td>
+                <td><img [src]="vj.imagen" alt="imagen" width="60"></td>
+                <td>{{ vj.descripcion }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="eliminarVideojuego(vj.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
