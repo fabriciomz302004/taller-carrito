@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Videojuegosservices {
-  private API_VIDEOJUEGOS = 'http://localhost:9090/videojuegos'; // Cambia el endpoint según tu backend
+  private API_VIDEOJUEGOS = 'http://localhost:9090/videojuegos'; 
 
   constructor(private http: HttpClient) {}
 
-  // Crear videojuego
+  // Crear un nuevo videojuego
   postVideojuego(videojuego: any): Observable<any> {
     return this.http.post(this.API_VIDEOJUEGOS, videojuego);
   }

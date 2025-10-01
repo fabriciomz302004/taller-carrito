@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// PRIMERO define y exporta la interfaz Producto
+
 export interface Producto {
   id: number;
   titulo: string;
@@ -14,7 +14,7 @@ export interface Producto {
   desarrollador?: string;
 }
 
-// LUEGO el servicio
+
 @Injectable({
   providedIn: 'root'
 })

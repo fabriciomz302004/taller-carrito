@@ -16,7 +16,7 @@ export class Resumen {
   total: number = 0;
 
   constructor() {
-    // Obtener el id o email del usuario actual desde localStorage
+   
     const usuarioGuardado = localStorage.getItem('usuario');
     let id = null;
     let email = null;
@@ -25,16 +25,16 @@ export class Resumen {
       id = usuarioLocal.id;
       email = usuarioLocal.email;
     }
-    // Buscar usuario en el JSON importado
+ 
     if (id) {
       this.usuario = usuariosData.users.find((u: any) => u.id === id) || {};
     } else if (email) {
       this.usuario = usuariosData.users.find((u: any) => u.email === email) || {};
     } else {
-      // Si no hay usuario en localStorage, mostrar el primero del JSON
+      
       this.usuario = usuariosData.users[0] || {};
     }
-    // Los productos comprados se guardan en 'compra' (última compra realizada)
+    
     const compraGuardada = localStorage.getItem('compra');
     if (compraGuardada) {
       this.carrito = JSON.parse(compraGuardada);

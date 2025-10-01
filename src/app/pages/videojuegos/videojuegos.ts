@@ -52,7 +52,8 @@ export class Videojuegos implements OnInit {
   obtenerVideojuegos() {
     this.videojuegosService.getVideojuegos().subscribe({
       next: (data: any[]) => {
-        this.videojuegos = data;
+       
+        this.videojuegos = [...data];
       },
       error: () => {
         this.videojuegos = [];

@@ -14,7 +14,7 @@ export class Carrito {
 
   ngOnInit() {
     const items = JSON.parse(localStorage.getItem('carrito') || '[]');
-    // Adaptar los campos para los juegos traídos de MySQL
+   
     this.carrito = items.map((p: any) => ({
       ...p,
       cantidad: p.cantidad || 1,

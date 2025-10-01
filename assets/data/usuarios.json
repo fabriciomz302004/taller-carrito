@@ -119,6 +119,13 @@
       "nombre": "alo",
       "edad": 21,
       "id": "5nXSixy"
+    },
+    {
+      "email": "regina@gmail.com",
+      "password": "$2a$10$CbmZshr4X/noQnOL8FA4qOSQTHzaKEYNj5/uSytlUXLdlEZE83qcy",
+      "nombre": "regina",
+      "edad": 45,
+      "id": "BcPy92Z"
     }
   ]
 }

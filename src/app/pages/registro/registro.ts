@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Usuarios } from '../../services/usuarios';
+
 import { Autenticacion } from '../../services/autenticacion';
 import { Router } from '@angular/router';
 

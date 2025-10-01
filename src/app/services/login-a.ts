@@ -9,14 +9,18 @@ export class LoginA {
 
   login() {
     this.acceso = true;
+    localStorage.setItem('logueado', 'true');
   }
 
   logout() {
     this.acceso = false;
+    localStorage.removeItem('logueado');
   }
-   logueado() {
-     return this.acceso;
-   }
+
+  logueado() {
+    // Verifica el estado en localStorage para persistencia
+    return localStorage.getItem('logueado') === 'true';
+  }
 
 
   
